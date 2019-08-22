@@ -1,0 +1,387 @@
+/**
+ * 1. Set default font family to monospace.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+  font-family: "Anonymous Pro", monospace;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/**
+   * Remove default margin and padding.
+   */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+section {
+  display: flex;
+  align-items: center;
+  margin: auto 3vw;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  flex-shrink: 0;
+}
+
+.inner_wrapper {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.main_frame {
+  background-image: url("../img/6626.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: absolute;
+}
+
+.side_frame {
+  width: 50vw;
+  height: 100vh;
+  background-color: #fffaec;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+  position: relative;
+  z-index: 10;
+}
+
+.fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+.cross {
+  margin-top: 3vh;
+  margin-left: 3vw;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+}
+
+.cross span::after {
+  content: "";
+  border-top: 2px solid #504629;
+  display: block;
+  width: 100%;
+  margin-top: -1px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  transform: rotate(140deg);
+}
+
+.cross span::before {
+  content: "";
+  border-top: 2px solid #504629;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  transform: rotate(40deg);
+}
+
+.menu-list {
+  width: 50%;
+  height: 80%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-list ul li a {
+  text-decoration: none;
+  font-size: 2em;
+  color: #504629;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.booking-box {
+  padding: 3em;
+}
+
+.booking-box div {
+  padding: 1em;
+  border: 2px dotted #504629;
+  text-align: center;
+  cursor: pointer;
+}
+
+.booking-box div a {
+  font-size: 2em;
+  color: #504629;
+}
+
+.booking-box div a span {
+  background-image: url(../img/open-book.svg);
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.menu-list ul li a:hover {
+  color: wheat;
+}
+
+.menu-list ul {
+  list-style: none;
+  line-height: 3em;
+  padding: 0;
+  text-align: center;
+}
+
+.screen_filter {
+  width: 100%;
+  height: 100%;
+  background-color: #504629;
+  opacity: 0.6;
+}
+
+.bars {
+  margin-top: 3vh;
+  margin-left: 3vw;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.bars span {
+  border-top: 2px solid white;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.bars span::after {
+  content: "";
+  border-top: 2px solid white;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.bars span::before {
+  content: "";
+  border-top: 2px solid white;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.bars span:hover::after,
+.bars span:hover::before {
+  margin-top: 10px;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  margin-right: 3vw;
+  margin-top: 3vh;
+}
+
+.logo {
+  width: 90px;
+  height: 110px;
+  border: 2px dotted white;
+  padding-left: 5px;
+  margin-left: 5vw;
+}
+
+.logo::before {
+  content: "LA JUNGLA";
+  font-size: 1.6em;
+  color: white;
+  font-weight: bold;
+  line-height: 1.3em;
+}
+
+.logo span {
+  background-image: url(../img/monkey-facing-right.svg);
+  width: 2em;
+  height: 2em;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.social {
+  margin-top: 3vh;
+}
+
+.social .twitter span {
+  background-image: url("../img/twitter.svg");
+  display: block;
+  width: 1.7em;
+  height: 1.7em;
+  background-repeat: no-repeat;
+}
+
+.social .facebook span {
+  background-image: url("../img/facebook.svg");
+  display: block;
+  width: 1.7em;
+  height: 1.7em;
+  background-repeat: no-repeat;
+}
+
+.social .instagram span {
+  background-image: url("../img/instagram.svg");
+  display: block;
+  width: 1.7em;
+  height: 1.7em;
+  background-repeat: no-repeat;
+}
+
+.social a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.social .follow {
+  color: white;
+}
+
+.about {
+  width: 40vw;
+  color: white;
+}
+
+.about p {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.general-info hr {
+  color: white;
+  width: 30vw;
+  transform: rotate(90deg);
+  left: 35vw;
+  top: 50vh;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.popular_places a {
+  text-decoration: none;
+  color: white;
+  -webkit-text-decoration: none;
+}
+
+.popular_places:hover > a {
+  color: wheat;
+}
+
+.popular_places span {
+  border-top: 2px solid white;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.popular_places:hover > span {
+  border-color: wheat;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact-info p {
+  padding: 0 10px;
+}
+
+/* Medium devices */
+@media only screen and (max-width: 1024px) {
+  .general-info hr {
+    top: 55vh;
+  }
+}
+
+/* Medium devices */
+@media only screen and (max-width: 768px) {
+  .general-info hr {
+    display: none;
+  }
+
+  section {
+    justify-content: space-around;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .about {
+    width: 70vw;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .side_frame {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  footer {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  .main_frame {
+    height: 115vh;
+  }
+
+  .address-info {
+    padding: 0 10px;
+  }
+
+  .booking-box div a {
+    font-size: 1.2em;
+  }
+}
